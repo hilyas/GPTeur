@@ -1,5 +1,5 @@
 /*
-Copyright © 2023 NAME HERE <EMAIL ADDRESS>
+Copyright © 2023 Ilyas Hamdi <ilyas.hamdi@gmail.com>
 
 */
 package cmd
@@ -20,9 +20,6 @@ var rootCmd = &cobra.Command{
 	with OpenAI's ChatGPT API. It allows you to
 	input a prompt and get a response from the
 	ChatGPT model.`,
-	// Uncomment the following line if your bare application
-	// has an action associated with it:
-	// Run: func(cmd *cobra.Command, args []string) { },
 }
 
 // Execute adds all child commands to the root command and sets flags appropriately.
@@ -36,16 +33,7 @@ func Execute() {
 
 func init() {
 	cobra.OnInitialize()
-	// Here you will define your flags and configuration settings.
-	// Cobra supports persistent flags, which, if defined here,
-	// will be global for your application.
-
-	// rootCmd.PersistentFlags().StringVar(&cfgFile, "config", "", "config file (default is $HOME/.gpteur.yaml)")
 	rootCmd.PersistentFlags().StringVar(&apiKey, "apikey", "", "API key for ChatGPT authentication")
-
-	// Cobra also supports local flags, which will only run
-	// when this action is called directly.
-	rootCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
 }
 
 

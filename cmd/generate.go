@@ -62,6 +62,7 @@ var generateCmd = &cobra.Command{
 			fmt.Printf("Prompt: %s\n", prompt)
 			fmt.Printf("Model: %s\n", defaultModel)
 			fmt.Printf("Max tokens: %d\n", maxTokens)
+			fmt.Printf("Temperature: %f\n", temperature)
 			return
 		}
 
@@ -137,9 +138,7 @@ func generateText(prompt string, model string, maxTokens int, temperature float6
 func init() {
 	generateCmd.Flags().StringVarP(&prompt, "prompt", "p", "", "The input prompt for text generation")
 	generateCmd.Flags().IntVarP(&maxTokens, "max-tokens", "m", 250, "The maximum number of tokens to generate")
-	generateCmd.Flags().Float64P("temperature", "t", 0.5, "The sampling temperature")
-	// TODO: fix debug flag
-	generateCmd.Flags().BoolP("debug", "d", true, "Enable debug mode")
+	generateCmd.Flags().Float64P("temperature", "t", 0.9, "The temperature of the model")
 	generateCmd.MarkFlagRequired("prompt")
 	rootCmd.AddCommand(generateCmd)
 }
