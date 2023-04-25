@@ -1,16 +1,19 @@
-/*
-Copyright © 2023 Ilyas Hamdi <ilyas.hamdi@gmail.com>
-
-*/
 package cmd
 
 import (
 	"os"
 
+	"github.com/fatih/color"
 	"github.com/spf13/cobra"
 )
 
+// TODO: add debug flag to root command
+
 var apiKey string
+
+var red = color.New(color.FgRed).SprintFunc()
+var green = color.New(color.FgGreen).SprintFunc()
+var yellow = color.New(color.FgYellow).SprintFunc()
 
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
