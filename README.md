@@ -1,4 +1,4 @@
-# gpteur
+# GPTeur
 
 A GPT CLI tool to interact with the [ChatGPT](https://chatgpt.com/) API.
 
